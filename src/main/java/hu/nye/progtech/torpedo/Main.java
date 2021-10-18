@@ -29,5 +29,7 @@ public class Main {
         ship.setPos(x,y);
         System.out.println("Position: "+ Arrays.deepToString(ship.getPos()));
          */
+
+        //TODO implemenet game initializer
     }
 }
