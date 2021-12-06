@@ -1,35 +1,18 @@
 package hu.nye.progtech.torpedo;
 
-import hu.nye.progtech.torpedo.model.PlayerVO;
-import hu.nye.progtech.torpedo.model.ShipPosVO;
-
-import java.util.Arrays;
-import java.util.Scanner;
+import hu.nye.progtech.torpedo.service.GameState;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
-
     public static void main(String[] args) {
+        ApplicationContext context = new AnnotationConfigApplicationContext("hu.nye.progtech.torpedo");
+        GameState gameState = context.getBean(GameState.class);
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter your player name: ");
-        PlayerVO player = new PlayerVO(scanner.nextLine());
-        System.out.println("Greetings " + player.getName() + "!");
-
-
-        System.out.println("Now please enter your ships positions:");
-        System.out.println("X: ");
-        int x = scanner.nextInt();
-        System.out.println("Y: ");
-        int y = scanner.nextInt();
-
-        //TODO FIX the position setter algorithm
-
-        /*
-        ShipPosVO ship = new ShipPosVO(new int[10][10]);
-        ship.setPos(x,y);
-        System.out.println("Position: "+ Arrays.deepToString(ship.getPos()));
+        /**
+         * Egy paranccsal elindítom a játékot.
          */
 
-        //TODO implemenet game initializer
+        gameState.playGame();
     }
 }

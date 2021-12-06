@@ -6,7 +6,7 @@
 
     <groupId>hu.nye.progtech</groupId>
     <artifactId>torpedo</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -31,6 +31,37 @@
             <artifactId>mockito-junit-jupiter</artifactId>
             <version>3.12.4</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.3.13</version>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.199</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.9.4</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>3.0.0</version>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 
@@ -72,6 +103,9 @@
                 <version>0.8.2</version>
                 <configuration>
                     <excludes>
+                        <exclude>hu/nye/progtech/torpedo/exception/*</exclude>
+                        <exclude>hu/nye/progtech/torpedo/configuration/*</exclude>
+                        <exclude>hu/nye/progtech/torpedo/ui/*</exclude>
                         <exclude>hu/nye/progtech/torpedo/model/*</exclude>
                         <exclude>hu/nye/progtech/torpedo/Main.*</exclude>
                     </excludes>
